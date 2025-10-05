@@ -1,38 +1,403 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'Arial', sans-serif;
+  background: #1b2838;
+  color: #c7d5e0;
+  min-height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.layout {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.app-header {
+  text-align: center;
+  padding: 25px 20px;
+  background: #171a21;
+  border-bottom: 2px solid #66c0f4;
+}
+
+.app-header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.app-header p {
+  font-size: 1.1rem;
+  color: #66c0f4;
+}
+
+.app-footer {
+  text-align: center;
+  padding: 20px;
+  background: #171a21;
+  border-top: 2px solid #66c0f4;
+  color: #c7d5e0;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #66c0f4;
+  padding: 60px 20px;
+}
+
+.main-page {
+  padding: 0;
+}
+
+.page-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #66c0f4;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 20px 0;
+}
+
+.game-card {
+  background: #2a475e;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  border: 1px solid #3c5a78;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(102, 192, 244, 0.2);
+  border-color: #66c0f4;
+}
+
+.game-image-container {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.game-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.game-card:hover .game-image {
+  transform: scale(1.05);
+}
+
+.game-rating {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(102, 192, 244, 0.9);
+  color: #1b2838;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.game-title {
+  padding: 18px 15px 8px;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.game-title-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.game-title-link:hover h3 {
+  color: #66c0f4;
+}
+
+.game-genre {
+  text-align: center;
+  color: #8f98a0;
+  font-size: 0.95rem;
+  margin: 0 0 18px;
+  padding: 0 15px;
+}
+
+.like-btn {
+  margin: 0 15px 18px;
+  padding: 12px;
+  background: linear-gradient(135deg, #66c0f4, #4c8bf5);
+  color: #1b2838;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  width: calc(100% - 30px);
+}
+
+.like-btn:hover {
+  background: linear-gradient(135deg, #4c8bf5, #66c0f4);
+  transform: translateY(-2px);
+}
+
+.like-btn.liked {
+  background: linear-gradient(135deg, #90ba3c, #a6ce39);
+  color: #1b2838;
+}
+
+.like-btn.liked:hover {
+  background: linear-gradient(135deg, #a6ce39, #90ba3c);
+}
+
+.game-detail {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 70vh;
+}
+
+.back-link {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 30px;
+  color: #66c0f4;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 10px 20px;
+  border: 1px solid #66c0f4;
+  border-radius: 4px;
+  background: rgba(102, 192, 244, 0.1);
 }
 
-.App-link {
-  color: #61dafb;
+.back-link:hover {
+  background: #66c0f4;
+  color: #1b2838;
+  transform: translateX(-5px);
 }
 
-@keyframes App-logo-spin {
+.detail-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+  background: #2a475e;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  border: 1px solid #3c5a78;
+}
+
+.detail-image {
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.detail-info h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+  text-align: left;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.detail-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detail-genre {
+  font-size: 1.2rem;
+  color: #c7d5e0;
+  padding: 10px 16px;
+  background: #3c5a78;
+  border-radius: 4px;
+  border-left: 4px solid #66c0f4;
+}
+
+.detail-rating {
+  font-size: 1.3rem;
+  color: #ffc107;
+  font-weight: bold;
+  padding: 10px 16px;
+  background: #3c5a78;
+  border-radius: 4px;
+  border-left: 4px solid #ffc107;
+}
+
+.detail-status {
+  font-size: 1.2rem;
+  color: #90ba3c;
+  font-weight: 500;
+  padding: 10px 16px;
+  background: #3c5a78;
+  border-radius: 4px;
+  border-left: 4px solid #90ba3c;
+}
+
+.detail-actions {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #3c5a78;
+}
+
+.detail-like-btn {
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #66c0f4, #4c8bf5);
+  color: #1b2838;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.detail-like-btn:hover {
+  background: linear-gradient(135deg, #4c8bf5, #66c0f4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 192, 244, 0.3);
+}
+
+.detail-like-btn.liked {
+  background: linear-gradient(135deg, #90ba3c, #a6ce39);
+}
+
+.detail-like-btn.liked:hover {
+  background: linear-gradient(135deg, #a6ce39, #90ba3c);
+  box-shadow: 0 4px 12px rgba(144, 186, 60, 0.3);
+}
+
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(20px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.game-card {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 15px;
+  }
+  
+  .app-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .games-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 18px;
+  }
+  
+  .game-detail {
+    padding: 15px;
+  }
+  
+  .detail-content {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 20px;
+  }
+  
+  .detail-info h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  .back-link {
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+  }
+  
+  .detail-meta {
+    gap: 10px;
+  }
+  
+  .detail-genre,
+  .detail-rating,
+  .detail-status {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 10px;
+  }
+  
+  .games-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .game-title {
+    font-size: 1.1rem;
+  }
+  
+  .detail-content {
+    padding: 15px;
+  }
+  
+  .detail-info h1 {
+    font-size: 1.6rem;
+  }
+  
+  .detail-genre,
+  .detail-rating,
+  .detail-status {
+    font-size: 1rem;
+    padding: 8px 12px;
+  }
+  
+  .detail-like-btn {
+    padding: 12px 20px;
+    font-size: 1rem;
   }
 }

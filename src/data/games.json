@@ -1,0 +1,98 @@
+[
+  { 
+    "id": 0, 
+    "title": "PUBG", 
+    "img": "https://wallpapers.com/images/high/pubg-thumbnail-helmet-guy-poster-ajq9gmhboru7xmmz.webp", 
+    "liked": false,
+    "genre": "Баттл-рояль, Шутер",
+    "rating": 5.0
+  },
+  { 
+    "id": 1, 
+    "title": "GTA V", 
+    "img": "https://portforward.com/help/grand-theft-auto-v/grand-theft-auto-v-header.webp", 
+    "liked": false,
+    "genre": "Экшен, Сюжет, Шутер",
+    "rating": 4.8
+  },
+  { 
+    "id": 2, 
+    "title": "Cyberpunk 2077", 
+    "img": "https://cdna.artstation.com/p/assets/images/images/033/037/878/4k/artur-tarnowski-femalemain.jpg?1608208309", 
+    "liked": false,
+    "genre": "RPG, Сюжет Экшен",
+    "rating": 4.0
+  },
+  { 
+    "id": 3, 
+    "title": "The Witcher 3", 
+    "img": "https://wallup.net/wp-content/uploads/2017/03/27/391266-Geralt_of_Rivia-The_Witcher-The_Witcher_3_Wild_Hunt.jpg", 
+    "liked": false,
+    "genre": "RPG, Сюжет, Экшен",
+    "rating": 5.0
+  },
+  { 
+    "id": 4, 
+    "title": "Factorio", 
+    "img": "https://i.ytimg.com/vi/BqaAjgpsoW8/maxresdefault.jpg", 
+    "liked": false,
+    "genre": "Стратегия",
+    "rating": 4.1
+  },
+  { 
+    "id": 5, 
+    "title": "Elden Ring", 
+    "img": "https://i.ytimg.com/vi/E3Huy2cdih0/maxresdefault.jpg", 
+    "liked": false,
+    "genre": "RPG",
+    "rating": 4.6
+  },
+  { 
+    "id": 6, 
+    "title": "CS2", 
+    "img": "https://blix.gg/wp-content/uploads/2024/10/885493db55567467-1024x576.jpeg", 
+    "liked": false,
+    "genre": "Шутер",
+    "rating": 2.5
+  },
+  { 
+    "id": 7, 
+    "title": "Forza Horizon 4", 
+    "img": "https://i.pinimg.com/736x/06/6b/31/066b317e1fb833e770557c97bdcd4991.jpg", 
+    "liked": false,
+    "genre": "Гонки",
+    "rating": 4.4
+  },
+  { 
+    "id": 8, 
+    "title": "Beyond All Reason", 
+    "img": "https://static-cdn.jtvnw.net/jtv_user_pictures/f2b0d04b-61d0-4fa9-af6b-16d4bc93a9eb-profile_banner-480.png", 
+    "liked": false,
+    "genre": "Стратегия",
+    "rating": 4.2
+  },
+  { 
+    "id": 9, 
+    "title": "Red Dead Redemption 2", 
+    "img": "https://img.opencritic.com/game/3717/o/X3K4DXoF.jpg", 
+    "liked": false,
+    "genre": "Экшен, Шутер, Сюжет",
+    "rating": 5.0
+  },
+  { 
+    "id": 10, 
+    "title": "FC26", 
+    "img": "https://e0.365dm.com/25/07/768x432/skysports-eafc-bellingham-musiala_6966794.jpg?20250717093803", 
+    "liked": false,
+    "genre": "Спорт",
+    "rating": 4.7
+  },
+  { 
+    "id": 11, 
+    "title": "Dying Light: THE BEAST", 
+    "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3008130/b5944c43d563d780614d961ee859f7ce1248c9fa/capsule_616x353.jpg?t=1758717740", 
+    "liked": false,
+    "genre": "Хоррор, Экшен, Сюжет",
+    "rating": 4.5
+  }
+]
