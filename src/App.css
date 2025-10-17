@@ -167,12 +167,12 @@ body {
 }
 
 .like-btn.liked {
-  background: linear-gradient(135deg, #90ba3c, #a6ce39);
+  background: linear-gradient(135deg, #17969d, #1aced7);
   color: #1b2838;
 }
 
 .like-btn.liked:hover {
-  background: linear-gradient(135deg, #a6ce39, #90ba3c);
+  background: linear-gradient(135deg, #1aced7, #17969d);
 }
 
 .game-detail {
@@ -262,12 +262,12 @@ body {
 
 .detail-status {
   font-size: 1.2rem;
-  color: #90ba3c;
+  color: #1aced7;
   font-weight: 500;
   padding: 10px 16px;
   background: #3c5a78;
   border-radius: 4px;
-  border-left: 4px solid #90ba3c;
+  border-left: 4px solid #1aced7;
 }
 
 .detail-actions {
@@ -298,11 +298,11 @@ body {
 }
 
 .detail-like-btn.liked {
-  background: linear-gradient(135deg, #90ba3c, #a6ce39);
+  background: linear-gradient(135deg, #17969d, #1aced7);
 }
 
 .detail-like-btn.liked:hover {
-  background: linear-gradient(135deg, #a6ce39, #90ba3c);
+  background: linear-gradient(135deg, #1aced7, #17969d);
   box-shadow: 0 4px 12px rgba(144, 186, 60, 0.3);
 }
 
