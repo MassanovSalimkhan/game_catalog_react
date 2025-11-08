@@ -25,6 +25,9 @@ function Header() {
         <Link to="/login" style={{ color: '#c7d5e0', margin: '0 10px', textDecoration: 'none' }}>
           Вход
         </Link>
+        <Link to="/preorders" style={{ color: '#c7d5e0', margin: '0 10px', textDecoration: 'none' }}>
+          Предзаказы
+        </Link>
         {currentUser && (
           <span style={{ color: '#c7d5e0', margin: '0 10px' }}>
             Привет, {currentUser.username}!

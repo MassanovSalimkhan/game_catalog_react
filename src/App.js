@@ -5,7 +5,9 @@ import FavoritesPage from './pages/FavoritesPage';
 import Detail from './pages/Detail';
 import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
+import PreordersPage from './pages/PreordersPage';
 import './App.css';
+
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
           <Route path="/game/:id" element={<Detail />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/preorders" element={<PreordersPage />} />
         </Routes>
       </div>
     </Router>
