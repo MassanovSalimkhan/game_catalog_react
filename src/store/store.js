@@ -1,5 +1,5 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import { thunk } from 'redux-thunk'; // ← ИСПРАВИЛ НА { thunk }
+import { thunk } from 'redux-thunk';
 import gamesReducer from './reducers/gamesReducer';
 import favoritesReducer from './reducers/favoritesReducer';
 import authReducer from './reducers/authReducer';
@@ -29,6 +29,7 @@ const initialState = {
   },
   preorders: {
     items: [],
+    bookings: JSON.parse(localStorage.getItem('gameBookings')) || [],
     loading: false,
     booking: false,
     error: null

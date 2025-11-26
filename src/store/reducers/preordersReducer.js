@@ -1,5 +1,6 @@
 const initialState = {
   items: [],
+  bookings: JSON.parse(localStorage.getItem('gameBookings')) || [],
   loading: false,
   booking: false,
   error: null
@@ -7,7 +8,6 @@ const initialState = {
 
 export default function preordersReducer(state = initialState, action) {
   switch (action.type) {
-    // Загрузка предзаказов
     case 'FETCH_PREORDERS_START':
       return { ...state, loading: true, error: null };
     case 'FETCH_PREORDERS_SUCCESS':
@@ -19,7 +19,6 @@ export default function preordersReducer(state = initialState, action) {
     case 'FETCH_PREORDERS_ERROR':
       return { ...state, loading: false, error: action.payload };
 
-    // Бронирование предзаказа
     case 'BOOK_PREORDER_START':
       return { ...state, booking: true, error: null };
     case 'BOOK_PREORDER_SUCCESS':
@@ -32,6 +31,16 @@ export default function preordersReducer(state = initialState, action) {
       };
     case 'BOOK_PREORDER_ERROR':
       return { ...state, booking: false, error: action.payload };
+
+    case 'ADD_BOOKING':
+      const newBookingsAdd = [...state.bookings, action.payload];
+      localStorage.setItem('gameBookings', JSON.stringify(newBookingsAdd));
+      return { ...state, bookings: newBookingsAdd };
+      
+    case 'REMOVE_BOOKING':
+      const newBookingsRemove = state.bookings.filter((_, index) => index !== action.payload);
+      localStorage.setItem('gameBookings', JSON.stringify(newBookingsRemove));
+      return { ...state, bookings: newBookingsRemove };
 
     default:
       return state;
