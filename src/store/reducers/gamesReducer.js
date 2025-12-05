@@ -1,6 +1,7 @@
 const initialState = {
   items: [],   
-  loading: false
+  loading: false,
+  filter: "all", 
 };
 
 export default function gamesReducer(state = initialState, action) {
@@ -17,6 +18,11 @@ export default function gamesReducer(state = initialState, action) {
         items: state.items.map(item =>
           item.id === action.payload ? { ...item, liked: !item.liked } : item
         )
+      };
+    case 'SET_FILTER': 
+      return {
+        ...state,
+        filter: action.payload
       };
     default:
       return state;

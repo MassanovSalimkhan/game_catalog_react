@@ -19,6 +19,7 @@ const initialState = {
   games: {
     items: gamesData,
     loading: false,
+    filter: "all",
   },
   favorites: {
     list: []            
